@@ -36,6 +36,43 @@
             background-color: #f8fafc;
         }
         
+        /* Mobile responsive calendar */
+        @media (max-width: 768px) {
+            .calendar-day {
+                min-height: 80px;
+                padding: 8px 4px;
+            }
+            
+            .day-number {
+                font-size: 14px;
+                line-height: 1;
+                white-space: nowrap;
+            }
+            
+            .day-summary {
+                font-size: 9px;
+                padding: 1px 3px;
+                margin-top: 2px;
+                line-height: 1.2;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .calendar-day {
+                min-height: 70px;
+                padding: 6px 2px;
+            }
+            
+            .day-number {
+                font-size: 12px;
+            }
+            
+            .day-summary {
+                font-size: 8px;
+                padding: 1px 2px;
+            }
+        }
+        
         .working-day {
             background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
             border: 2px solid #0ea5e9;
@@ -165,53 +202,53 @@
             </div>
             
             <!-- Calendar Grid -->
-            <div class="grid grid-cols-7 gap-2">
+            <div class="grid grid-cols-7 gap-1 md:gap-2">
                 <!-- Day Headers -->
-                <div class="text-center font-medium text-gray-600 py-3">Sun</div>
-                <div class="text-center font-medium text-gray-600 py-3">Mon</div>
-                <div class="text-center font-medium text-gray-600 py-3">Tue</div>
-                <div class="text-center font-medium text-gray-600 py-3">Wed</div>
-                <div class="text-center font-medium text-gray-600 py-3">Thu</div>
-                <div class="text-center font-medium text-gray-600 py-3">Fri</div>
-                <div class="text-center font-medium text-gray-600 py-3">Sat</div>
+                <div class="text-center font-medium text-gray-600 py-2 md:py-3 text-sm md:text-base">Sun</div>
+                <div class="text-center font-medium text-gray-600 py-2 md:py-3 text-sm md:text-base">Mon</div>
+                <div class="text-center font-medium text-gray-600 py-2 md:py-3 text-sm md:text-base">Tue</div>
+                <div class="text-center font-medium text-gray-600 py-2 md:py-3 text-sm md:text-base">Wed</div>
+                <div class="text-center font-medium text-gray-600 py-2 md:py-3 text-sm md:text-base">Thu</div>
+                <div class="text-center font-medium text-gray-600 py-2 md:py-3 text-sm md:text-base">Fri</div>
+                <div class="text-center font-medium text-gray-600 py-2 md:py-3 text-sm md:text-base">Sat</div>
                 
                 <!-- Calendar Days -->
-                <div id="calendarGrid" class="col-span-7 grid grid-cols-7 gap-2">
+                <div id="calendarGrid" class="col-span-7 grid grid-cols-7 gap-1 md:gap-2">
                     <!-- Days will be populated here -->
                 </div>
             </div>
         </div>
 
         <!-- Quick Stats -->
-        <div class="grid md:grid-cols-5 gap-4 mb-8">
-            <div class="stats-card rounded-xl p-6 text-center">
-                <div class="text-2xl mb-2">📅</div>
-                <div class="text-2xl font-bold text-blue-600" id="daysAttended">0</div>
-                <div class="text-sm text-gray-600">Days Attended</div>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4 mb-8">
+            <div class="stats-card rounded-xl p-4 md:p-6 text-center">
+                <div class="text-xl md:text-2xl mb-1 md:mb-2">📅</div>
+                <div class="text-xl md:text-2xl font-bold text-blue-600" id="daysAttended">0</div>
+                <div class="text-xs md:text-sm text-gray-600">Days Attended</div>
             </div>
             
-            <div class="stats-card rounded-xl p-6 text-center">
-                <div class="text-2xl mb-2">📚</div>
-                <div class="text-2xl font-bold text-gray-800" id="totalLectures">0</div>
-                <div class="text-sm text-gray-600">Total Lectures</div>
+            <div class="stats-card rounded-xl p-4 md:p-6 text-center">
+                <div class="text-xl md:text-2xl mb-1 md:mb-2">📚</div>
+                <div class="text-xl md:text-2xl font-bold text-gray-800" id="totalLectures">0</div>
+                <div class="text-xs md:text-sm text-gray-600">Total Lectures</div>
             </div>
             
-            <div class="stats-card rounded-xl p-6 text-center">
-                <div class="text-2xl mb-2">✅</div>
-                <div class="text-2xl font-bold text-green-600" id="attendedLectures">0</div>
-                <div class="text-sm text-gray-600">Lectures Attended</div>
+            <div class="stats-card rounded-xl p-4 md:p-6 text-center">
+                <div class="text-xl md:text-2xl mb-1 md:mb-2">✅</div>
+                <div class="text-xl md:text-2xl font-bold text-green-600" id="attendedLectures">0</div>
+                <div class="text-xs md:text-sm text-gray-600">Lectures Attended</div>
             </div>
             
-            <div class="stats-card rounded-xl p-6 text-center">
-                <div class="text-2xl mb-2">❌</div>
-                <div class="text-2xl font-bold text-red-600" id="missedLectures">0</div>
-                <div class="text-sm text-gray-600">Lectures Missed</div>
+            <div class="stats-card rounded-xl p-4 md:p-6 text-center">
+                <div class="text-xl md:text-2xl mb-1 md:mb-2">❌</div>
+                <div class="text-xl md:text-2xl font-bold text-red-600" id="missedLectures">0</div>
+                <div class="text-xs md:text-sm text-gray-600">Lectures Missed</div>
             </div>
             
-            <div class="stats-card rounded-xl p-6 text-center">
-                <div class="text-2xl mb-2">📈</div>
-                <div class="text-2xl font-bold" id="attendancePercent">0%</div>
-                <div class="text-sm text-gray-600">Attendance Rate</div>
+            <div class="stats-card rounded-xl p-4 md:p-6 text-center col-span-2 md:col-span-1">
+                <div class="text-xl md:text-2xl mb-1 md:mb-2">📈</div>
+                <div class="text-xl md:text-2xl font-bold" id="attendancePercent">0%</div>
+                <div class="text-xs md:text-sm text-gray-600">Attendance Rate</div>
             </div>
         </div>
     </main>
@@ -596,7 +633,7 @@
                 
                 // Day number
                 const dayNumber = document.createElement('div');
-                dayNumber.className = 'font-semibold text-gray-800 mb-1';
+                dayNumber.className = 'day-number font-semibold text-gray-800 mb-1';
                 dayNumber.textContent = date.getDate();
                 dayDiv.appendChild(dayNumber);
                 
@@ -1038,5 +1075,5 @@
             new AttendanceCalendar();
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9857ce0f6680a841',t:'MTc1ODk0MjU5NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9858fcce02a1a78c',t:'MTc1ODk1NDk5NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
